@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Product Detail</h1>
+    {% for product in product_detail %}
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <img width="500px" src="{{ product.image.url }}" alt="">
+                </td>
+                <td>
+                    <h4>{{ product.name }}</h4>
+                    <h5>{{ product.price }}</h5>
+                    <p>{{ product.color }}</p>
+                    <p>{{ product.description }}</p>
+                    <h4><a href="#">Add to Cart</a></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+{% endblock %}

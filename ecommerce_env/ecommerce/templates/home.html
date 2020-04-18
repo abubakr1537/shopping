@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for product in home %}
+    <table>
+        <tr>
+            <td><img width="300px" src="{{ product.image.url }}" alt=""></td>
+            <td>
+                <h4><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h4>
+                <p>${{ product.price }}</p>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+{% endblock %}
